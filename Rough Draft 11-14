@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+
+\title{Are You Warm-Blooded? The Effect of Hometown Climate on NFL Running Backs' Performance in Freezing Temperatures}
+\author{Lydia Margolien}
+\date{November 14 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Abstract}
+
+\section{Introduction}
+
+Many Americans have an affinity for the climate of where they grew up. Northerners hesitate to move to the South because of the oppressively hot summers and lack of true cold weather in the winter. Southerners may feel as though they are "warm blooded" and will be unable to handle the Northern winter cold. Effects of preferred climate on travel and migration patterns as well as athletic performance are often subject of casual conversation and investigation. While many journalistic pieces have speculated on effect of weather on play performance, few academics have delved into this area of research (citation1, citation2). Sports journalists will speculate on a team's performance in a cold weather game, for instance, based on where the team's home field is (for example, the Buffalo Bills are certainly better acclimated to playing in cold and snowy games than the Miami Dolphins (cite BleacherReport article)). But what about the effect of weather on individual players? 
+
+This paper seeks to answer how a player's hometown climate (lifetime climate) affects their performance. That is, are people truly better acclimated to weather similar to where they grew up? This study specifically analyzes NFL running backs' performance (by examining yards per carry, referred to as YPC) in games played in freezing temperatures (32 degrees Fahrenheit or below). Lifetime climate has been determined by looking at the average temperatures of a players' hometown and where they played college football. Players that grew up in areas \textit{and} played college football in locations with January and February average temperatures above 50 degrees Fahrenheit were examined against players whose hometowns and college towns did not fit this standard. This paper seeks to answer if there is a significant difference in performance in freezing temperatures between people with lifetime colder climates than those who usually did not experience freezing weather.
+
+Performances in freezing temperatures were examined because these temperatures are unique to certain parts of the country. [most/if not all/majority/etc] locales in the continuous United States experience very warm temperatures and  heat waves throughout a summer, even if the average summer temperature is lower than in the South (citation 3). However, [percent] of Americans live in locations that may go years without snow or high temperatures of freezing or below (citation 4). This means that there almost all Americans will experience very hot weather at some point, but not all Americans will be exposed to freezing temperatures. 
+
+
+\section{Data Description}
+Games were selected from the 2017, 2018, and 2019 National Football League (NFL) season. To be considered in this study, games had to be played outdoors in below freezing temperatures for all four quarters. Temperatures per game were found from weather.gov for the day, time, and location of the stadium during game time. The 10 domed stadiums in the NFL were automatically excluded from the study.
+
+Running backs' performance statistics were taken from nfl.com. While the running back data itself is not sampled randomly (these statistics take into account every play that a player made in a game), the players were randomly selected in that all NFL teams play in cold temperatures essentially randomly. Players will have to play in cold temperatures no matter their lifetime climate as players do not play for professional teams based on where they are from. NFL season schedules are not generated randomly, however the conditions that need to be met during the schedule creation process are not influenced by climate patterns (cite NFL operations webpage). Thus, there is an element of "chance" (that is, randomness) that may indicate when in the season one team may play another team located in a Northern climate that would be more likely to experience freezing temperatures in the later part of the season. 
+
+NFL games were selected because they are the only American major sports league that plays a substantial amount of games outdoors in the winter. The Major League Baseball season ends at the end of October, barely after many cities have experienced their first frost. The NFL season plays through December and January when most locations experience their lowest winter temperatures. The PGA Tour (Professional Golf Association) will play almost year-round, however they choose warm weather locales in the autumn, winter, and early spring. 
+
+Running backs' performance was selected out of convenience. While quarterback performance is intensely analyzed with many statistical metrics, only one quarterback per team usually plays in each game. Multiple running backs will play in a game; this allows for a smaller number of seasons to be examined.
+
+Yards per carry (YPC) is a statistic that considers the number of carries a player had in a game and the number of total yard gains the player made throughout the game, calculated by the formula:
+
+\(T / C = YPC\)
+
+where T = total yard gain in the game, where $T \in \mathbb{I}$ and C = number of carries, where $ C \in \mathbb{N}$. 
+
+The yard gains and number of carries and corresponding YPC were calculated for each player and each game by nfl.com. The yard gain of each particular carry is not calculated. YPC is not a statistic specific to running backs. YPC will be calculated for quarterbacks, tight ends, wide receivers, and sometimes other offensive players as well. The running back position is usually more responsible for running the ball, that is "carrying" (which involves breaking through tackles and being a bigger player), whereas the wide receivers are more specialized in catching the ball. Since these positions all differ in their specialty, it is best to compare running back (RB) YPC compared to other RBs for consistency. 
+
+For each RB, information about their college and hometown was collected from nfl.com. From there, information about the average monthly temperature in each of their college and home towns was collected from weather.gov. As it is not uncommon for athletes to transfer colleges for athletic programs, several players had multiple college towns to consider. 
+
+
+\section{Methods}
+Players who experienced a "warm" lifetime climate (their hometown and college town had average temperatures above 50 degrees Fahrenheit in January and February) were compared to players who did not meet this criteria. The "warm" lifetime climate distinction was strict- if a player lived most of their life in the south and played even just a year of college football in a cooler climate they were removed from the warm climate group. These groups were coded accordingly in the constructed R data frame.
+
+A two sample t-test to test for difference of means was used. A t-test was used instead of a z-test because the population is just above 30 and the population standard deviation of running backs' performance in freezing games is unknown. 
+
+Before proceeding with the t-test, the normality assumption was tested with a histogram of the data that showed a unimodal and approximately symmetrical distribution of the YPCs. The variance test in R was used and a p-value of 0.6483 was produced, meaning that the null hypothesis (that variances are equal) could not be rejected. 
+
+The null hypothesis of the two sample t-test was that the two sample means were equal. The alternative hypothesis was that the two sample means (mean of warm lifetime climate group versus cool lifetime climate group). The results of the t-test produced a p-value of 0.7893. The confidence interval for the difference of means was (-1.506269,  1.974587), which includes zero. Therefore, there is not a significant difference in mean YPC for players from lifetime warm climates and players from lifetime cool climates.
+
+\section{Discussion}
+There was not a significant difference in mean YPC between the warm lifetime climate group and the cool lifetime climate group. There are many possible explanations for this. This could mean that someone's hometown climate does not affect them as they get older and leave where they come from, meaning that cold weather affects players' performances equally, on average. NFL teams also devote many resources to keeping their players warm when the are off the field. Specialized attire, heated benches, hand warmers, and warm beverages on the sideline all help to alleviate the cold (citation 5). 
+
+There are some limitations to this study. Single-game statistics may be affected by a variety of factors, such as the opposing team's performance, teammate performance (football carries are impacted by teammates' abilities to protect the RB or other offensive player from a block), as well as chance events that may impact a player's performance (e.g. events in one's personal life). Also, players usually have different amounts of playing times, making comparisons difficult. Additionally, monthly average data is not the most precise weather measurement. To be more precise, future studies could use year-specific weather data for each player; for example, if a player's university was in a warm climate but happened to experience several prolonged cold snaps in a year that a player was there, this could impact a player's adaptation to playing in cold weather. A location with a monthly average of just above 50 degrees will still experience some freezing weather, whereas locations with monthly averages closer to 7 or 80 degrees may rarely experience weather below 60 degrees. The difference in those two climates, for example, would be very large and potentially should not both be grouped together in the warm climate category.
+
+More studies could be used to examine affect of weather on individuals. A study could be used with practice data to see if players on cold weather teams (teams that often see freezing temperatures on their home fields) who had a warm lifetime climate perform worse than other players during their first cold weather season. Using practice data would give more data, thus providing a more reliable and accurate account of a player's performance. Sports physicians, bariatric physicians and evolutionary biologists have published studies in their respective disciplines regarding the role of brown adipose tissue in warming human bodies. Infants have a large percent of brown adipose tissue (BAT). BAT decreases in proportion over the life time, but adults still have this tissue which is critical to body temperature regulation- specifically keeping humans warm (citation 6 and 7). A small number of studies have actually examined how the amount of this tissue can increase when an individual is repeatedly exposed to cold temperatures over a time (citation 8 showing that people who work outside have more BAT than people who work indoors). A study could combine athlete performance with BAT levels of athletes who have spent longer in cooler climates. 
+
+
+\bibliographystyle{unrst}
+\bibliography{references}
+
+\section{References}
+To be added. all links/citations saved on desktop computer. 
+
+\end{document}
+
+\usepackage{cite}
